@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>online classes</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #1a0033, #000033);
+      position: relative;
+    }
+
+    /* Animated background */
+    .waves {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #ff00cc, #ff9900, #ccff00, #00ffcc, #0099ff, #9900ff);
+      background-size: 600% 600%;
+      animation: waveFlow 25s ease infinite;
+      opacity: 0.85;
+      filter: blur(1px);
+    }
+
+    .waves::before, .waves::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: inherit;
+      background-size: 600% 600%;
+      animation: waveFlow 30s ease infinite reverse;
+      opacity: 0.6;
+    }
+
+    .waves::after { animation-duration: 35s; }
+
+    @keyframes waveFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* FIXED layout */
+    .container {
+      position: relative;
+      z-index: 10;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      padding: 24px;
+      width: 220px;
+      text-align: center;
+      color: white;
+      transition: transform 0.4s ease;
+    }
+
+    .card:hover { transform: translateY(-10px) scale(1.03); }
+
+    .main-card {
+      width: 480px;
+      padding: 60px 40px;
+      background: linear-gradient(135deg, rgba(255,0,255,0.25), rgba(0,255,255,0.25));
+    }
+
+    .main-card h1 {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, #ffffff, #e0f7ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .main-card p {
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #00ccff, #ff00cc);
+      color: white;
+      border: none;
+      padding: 14px 42px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px rgba(255,0,255,0.6);
+    }
+
+    .icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 28px;
+    }
+
+    .left-card .icon { background: #a855f7; }
+    .right-card .icon { background: #22d3ee; }
+
+    /* Email fix */
+.right-card a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.right-card a:hover {
+  text-decoration: underline;
+}
+.btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+  </style>
+</head>
+<body>
+
+  <div class="waves"></div>
+
+  <div class="container">
+    
+    <!-- Left -->
+    <div class="card left-card">
+      <div class="icon">📞</div>
+      <h3>My cell phone number (Saudi Arabia)</h3>
+      <p>050 8641983</p>
+    </div>
+
+    <!-- Center -->
+    <div class="card main-card">
+      <h1>Who I Am</h1>
+      <p>
+        I’m Atta Ur Rehman, a Grade 9 student at Atlas International School, Dammam. 
+        I offer online tutoring in Maths, Biology, Chemistry, and Physics for students 
+        in Grades 7–10, following the IGCSE curriculum. Contact details are on the left, 
+        if you have any questions, ask me via email on the right.
+      </p>
+<a href="details.html" class="btn">LEARN MORE</a>
+    </div>
+
+    <!-- Right -->
+    <div class="card right-card">
+      <div class="icon">📧</div>
+      <h3>My email address</h3>
+      <p>
+  <a href="mailto:attakhan546601@gmail.com">attakhan546601@gmail.com</a>
+</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
